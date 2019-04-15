@@ -1,13 +1,35 @@
 
-{% extends 'base.html'%}
-{% import 'macros.html' as macro%}
+{% extends 'base.html' %}
+<!-- {% import 'macros.html' as macro %} -->
 
 {% block styles%}
 {{super()}}
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
-{%block content%}
-    <ul>
+{% block content %}
+    <!-- <ul>
         {{macro.displaySources(sources)}}
-    </ul>
-{%endblock%}
+    </ul> -->
+<h2>General News</h2>
+
+
+    {% for g in general%}
+    <li>
+    {{g.name}}
+</li>
+
+    {% endfor %}
+
+
+    <h2>Business News</h2>
+
+
+    {% for b in business%}
+    <li>
+    {{b.name}}
+    <a href="{{b.url}}"></a>
+
+</li>
+
+    {% endfor %}
+ {% endblock %}

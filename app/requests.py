@@ -1,28 +1,30 @@
 import urllib.request
 import json
 
-from .models import Article,Source
+from .models import Articles,Sources
 
 
 #Getting api key
-api_key = None
+api_key = 'e0894a72d22c4b0fabb51d657e320c14'
 #Getting the news base url
-base_article_url = None
-base_source_url = None
+# base_article_url = None
+base_source_url ='https://newsapi.org/v2/top-headlines?country=us&category={}&apiKey={}'
 
 def configure_request(app): 
     global base_article_url,base_source_url
     api_key = app.config['NEWS_API_KEY']
-    base_article_url = app.config['NEWS_ARTICLE_API_BASE_URL']
-    base_source_url = app.config['NEWS_SOURCE_API_BASE_URL']
+    # base_article_url = app.config['NEWS_ARTICLE_API_BASE_URL']
+    # base_source_url = app.config['NEWS_SOURCE_API_BASE_URL']
 
 def get_article(): 
         '''
         Function that gets the json response to our url request
         '''
-        # get_article_url = base_article_url.format(api_key)
+        get_article_url = base_article_url.format(category,api_key)
 
-        with urllib.request.urlopen("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=f80d5dfbac424cbb9ebffcc23c378ffd") as url:
+        # with urllib.request.urlopen("https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=f80d5dfbac424cbb9ebffcc23c378ffd") as url:
+        with urllib.request.urlopen(get_article_url) as url:
+            
             get_article = url.read()
             get_article_response = json.loads(get_article.decode())
 
@@ -36,7 +38,7 @@ def get_article():
 
         return article_results 
 
-def process_articles(article_list):
+def process_articles(article_results):
         '''
         Function  that processes the article result and transform them to a list of Objects
         Args:
@@ -64,7 +66,7 @@ def process_articles(article_list):
 
 
 
-def get_source(): 
+def get_sources(category): 
         '''
         Function that gets the json response to our url request 
         '''
@@ -98,9 +100,9 @@ def process_sources(source_list):
             url = source_item.get('url')
             category = source_item.get('category')
             language = source_item.get('language')
-            country = source_item.get('country')
+            # country = source_item.get('country')
 
-            source = Source(id,name,description,url,category,language,country)
+            source = Sources(id,name,description,url,category,language)
             source_results.append(source)
 
             

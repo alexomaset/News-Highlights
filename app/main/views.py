@@ -1,15 +1,15 @@
 from flask import render_template,redirect,url_for,request
 from . import main
 from ..models import Sources
-from ..requests import get_sources, get_articles, topheadlines, everything, search_everything
+from ..requests import get_sources, get_article
+
 
 @main.route('/')
 def index():
     '''
     View root page function that returns the index page and its data
     '''
-    # message = 'Hello World'
-
+    
     cat_general = get_sources('general')
     cat_business = get_sources('business')
     cat_entertainment = get_sources('entertainment')
@@ -56,16 +56,3 @@ def all_news(per_page):
     else:
         return render_template('topheadlines.html', title=title, name='All News', news=everything_news)
 
-@main.route('/search/<topic>')
-def search(topic):
-    '''
-    function that returns the results of search request
-    '''
-    limit = 40
-    search_name = topic.split(" ")
-    search_name_format = "+".join(search_name)
-    search_every = search_everything(limit,search_name_format)
-
-    title = '{search_name_format} Results'
-
-    return render_template('search.html',title=title,news = search_every)
