@@ -1,0 +1,22 @@
+{% macro displayArticles(article_list) %}
+    {% for article in article_list %}
+    <div class="container" style="background-color:rgb(121, 139, 141);">
+        <h2>{{article.title}}</h2>
+        <h3>{{article.name}}</h3>
+        <img src="{{article.urlToImage}}" alt="Image" height='300' width='800'>
+        <p>{{article.description}}</p>
+        <p class='info'>{{article.publishedAt}}</p>
+        <a href="{{article.url}}">View Full Story</a>
+    </div>
+    {% endfor %}
+{% endmacro %}
+{% macro displaySources(sources) %}
+    {% for source in sources %}
+        <div class="col col-sm-6 col-md-4 col-lg-4 col-xs-12">
+            <li class='list-unstyled text-success'>{{source.name}}</li>
+            <p>{{source.description|truncate(100)}}</p>
+            <a href="{{source.url}}"><button class='btn'>See Our Page</button></a>
+        </div>
+        <br> <br>
+    {% endfor %}
+{% endmacro %}

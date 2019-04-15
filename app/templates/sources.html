@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro %}
+    {% block content %}
+    <!-- <div class="jumbotron" style="background-color: tomato"> -->
+        
+        <div class="container">
+            <h3>TOP HEADLINES</h3>
+            <div class="row">
+                <ul>
+                    {{macro.displaySources(sources)}} <br>  
+                </ul>
+                <br> <hr>
+            </div>
+        </div>
+
+{% endblock %}
