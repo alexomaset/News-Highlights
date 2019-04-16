@@ -1,7 +1,7 @@
-{%extends 'base.html%'}
-{% import 'macros.html' as macro %}
+{%extends 'base.html' %}
+<!-- {% import 'macros.html' as macro %} -->
 {% block content %}
-    <div class="container">
+    <!-- <div class="container">
         <h1>ARTICLES</h1>
         <hr>
         <div class="row">
@@ -9,5 +9,15 @@
                 {{macro.displayArticles(articles)}}
             </ul>
         </div>
-    </div>
+    </div> -->
+
+{% for item in source%}
+
+<li>{{item.title}}</li>
+<img src="{{item.urlToImage}}">
+
+<a href="{{item.url}}" target="_blank">{{item.url}}</a>
+
+{% endfor %}
+
     {% endblock %}
