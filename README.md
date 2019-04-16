@@ -27,3 +27,13 @@ News Highlights is a web application that allows a user to view news articles fr
 * Python3.6
 * Flask
 * Bootstrap
+
+## Contacts
+
+* alexomaset711@gmail.com
+
+## License and copyright
+
+* MIT License
+* Copyright (c) 2019 alexomaset
+
