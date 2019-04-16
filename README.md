@@ -15,7 +15,13 @@ News Highlights is a web application that allows a user to view news articles fr
 * then run ./start.py
 
 ## BDD
-    | Behavior | --- | --- |
+
+|  Behaviour  |  Input  |  Output  |
+| --- | --- | --- |
+|View Technology News |Scroll to the technology News headlines |View and read the various articles available |
+|View Business News | Scroll or click the business news |View the articles available |
+|View Health News | Click on the health news button |View the articles |
+|View general News |Navigate to the homepage|View articles displaying latest news in all categories |
 
 ## Technologies used
 * Python3.6
