@@ -12,11 +12,17 @@
     </div> -->
 
 {% for item in source%}
-
-<li>{{item.title}}</li>
-<img src="{{item.urlToImage}}">
+<div class="container">
+    <hr>
+    <div class="col-md-6">
+        <li>{{item.title}}</li>
+<img class="img-responsive" src="{{item.urlToImage}}">
 
 <a href="{{item.url}}" target="_blank">{{item.url}}</a>
+    </div>
+
+</div>
+
 
 {% endfor %}
 
