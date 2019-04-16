@@ -10,13 +10,13 @@ def index():
     View root page function that returns the index page and its data
     '''
     
-    cat_general = get_sources('general')
-    cat_business = get_sources('business')
-    cat_entertainment = get_sources('entertainment')
-    cat_sports = get_sources('sports')
-    cat_tech = get_sources('technology')
-    cat_science = get_sources('science')
-    cat_health = get_sources('health')
+    cat_general = get_article('general')
+    cat_business = get_article('business')
+    cat_entertainment = get_article('entertainment')
+    cat_sports = get_article('sports')
+    cat_tech = get_article('technology')
+    cat_science = get_article('science')
+    cat_health = get_article('health')
 
     title = 'Home | Best News Update Site'
     

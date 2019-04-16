@@ -3,6 +3,12 @@
 <!-- {% import 'macros.html' as macro %} -->
 
 {% block styles%}
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.7/css/mdb.min.css" rel="stylesheet">
 {{super()}}
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
@@ -11,26 +17,181 @@
         {{macro.displaySources(sources)}}
     </ul> -->
 <h2>General News</h2>
+<!-- Card -->
+<div class="container-fluid">
+    <div class="row">
+        {%for item in general%}
+        <div class="card col-md-3">
 
+            <!-- Card image -->
+            <img class="card-img-top" src="{{item.urlToImage}}" alt="Card image cap">
+          
+            <!-- Card content -->
+            <div class="card-body">
+          
+              <!-- Text -->
+              <p class="card-text">{{item.title}}</p>
+              <!-- Button -->
+              <a href="{{item.url}}" class="btn btn-primary">Read More</a>
+          
+            </div>
+    </div>
+    {%endfor%}
+</div>
+</div>
 
-    {% for g in general%}
-    <li>
-    {{g.name}}
+<h2>Business News</h2>
+<!-- Card -->
+<div class="container-fluid">
+    <div class="row">
+        {%for item in business%}
+        <div class="card col-md-3">
+
+            <!-- Card image -->
+            <img class="card-img-top" src="{{item.urlToImage}}" alt="Card image cap">
+          
+            <!-- Card content -->urlurl
+            <div class="card-body">
+          
+              <!-- Text -->
+              <p class="card-text">{{item.title}}</p>
+              <!-- Button -->
+              <a href="{{item.url}}" class="btn btn-primary">Read More</a>
+          
+            </div>
+    </div>
+    {%endfor%}
+</div>
+</div>
+
+<h2>Entertainment News</h2>
+<!-- Card -->
+<div class="container-fluid">
+    <div class="row">
+        {%for item in entertainment%}
+        <div class="card col-md-3">
+
+            <!-- Card image -->
+            <img class="card-img-top" src="{{item.urlToImage}}" alt="Card image cap">
+          
+            <!-- Card content -->
+            <div class="card-body">
+          
+              <!-- Text -->
+              <p class="card-text">{{item.title}}</p>
+              <!-- Button -->
+              <a href="{{item.url}}" class="btn btn-primary">Read More</a>
+          
+            </div>
+    </div>
+    {%endfor%}
+</div>
+</div>
+
+<h2>Sports News</h2>
+<!-- Card -->
+<div class="container-fluid">
+    <div class="row">
+        {%for item in sports%}
+        <div class="card col-md-3">
+
+            <!-- Card image -->
+            <img class="card-img-top" src="{{item.urlToImage}}" alt="Card image cap">
+          
+            <!-- Card content -->
+            <div class="card-body">
+          
+              <!-- Text -->
+              <p class="card-text">{{item.title}}</p>
+              <!-- Button -->
+              <a href="{{item.url}}" class="btn btn-primary">Read More</a>
+          
+            </div>
+    </div>
+    {%endfor%}
+</div>
+</div>
+
+<h2>Technology News</h2>
+<!-- Card -->
+<div class="container-fluid">
+    <div class="row">
+        {%for item in technology%}
+        <div class="card col-md-3">
+
+            <!-- Card image -->
+            <img class="card-img-top" src="{{item.urlToImage}}" alt="Card image cap">
+          
+            <!-- Card content -->
+            <div class="card-body">
+          
+              <!-- Text -->
+              <p class="card-text">{{item.title}}</p>
+              <!-- Button -->
+              <a href="{{item.url}}" class="btn btn-primary">Read More</a>
+          
+            </div>
+    </div>
+    {%endfor%}
+</div>
+</div>
+
+<h2>Science News</h2>
+<!-- Card -->
+<div class="container-fluid">
+    <div class="row">
+        {%for item in science%}
+        <div class="card col-md-3">
+
+            <!-- Card image -->
+            <img class="card-img-top" src="{{item.urlToImage}}" alt="Card image cap">
+          
+            <!-- Card content -->
+            <div class="card-body">
+          
+              <!-- Text -->
+              <p class="card-text">{{item.title}}</p>
+              <!-- Button -->
+              <a href="{{item.url}}" class="btn btn-primary">Read More</a>
+          
+            </div>
+    </div>
+    {%endfor%}
+</div>
+</div>
+
+<h2>Health News</h2>
+<!-- Card -->
+<div class="container-fluid">
+    <div class="row">
+        {%for item in health%}
+        <div class="card col-md-3">
+
+            <!-- Card image -->
+            <img class="card-img-top" src="{{item.urlToImage}}" alt="Card image cap">
+          
+            <!-- Card content -->
+            <div class="card-body">
+          
+              <!-- Text -->
+              <p class="card-text">{{item.title}}</p>
+              <!-- Button -->
+              <a href="{{item.url}}" class="btn btn-primary">Read More</a>
+          
+            </div>
+    </div>
+    {%endfor%}
+</div>
+</div>
+  
+ 
     
-
-</li>
-
-    {% endfor %}
-
-
-    <h2>Business News</h2>
-
-
-    {% for b in business%}
-    <li>
-    {{b.name}}
-    <a href="{{b.url}}"></a>
-    </li>
-
-    {% endfor %}
- {% endblock %}
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.7/js/mdb.min.js"></script>
+ {% endblock %}+
